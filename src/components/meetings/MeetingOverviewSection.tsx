@@ -19,47 +19,6 @@ export function MeetingOverviewSection() {
     <div className="space-y-6">
       <MeetingHeader {...meetingData} />
 
-      {/* Meeting Details Table */}
-      <Card className="p-6">
-        <h2 className="text-xl font-semibold text-slate-900 mb-4">
-          Meeting details
-        </h2>
-        <div className="space-y-3">
-          <div className="flex">
-            <div className="w-32 text-sm font-medium text-slate-600">Date</div>
-            <div className="text-sm text-slate-900">{meetingData.date}</div>
-          </div>
-          <div className="flex">
-            <div className="w-32 text-sm font-medium text-slate-600">Time</div>
-            <div className="text-sm text-slate-900">
-              {meetingData.time} - {meetingData.endTime} ({meetingData.duration})
-            </div>
-          </div>
-          <div className="flex">
-            <div className="w-32 text-sm font-medium text-slate-600">
-              Attendees
-            </div>
-            <div className="text-sm text-slate-900">
-              {meetingData.attendees.join(", ")}
-            </div>
-          </div>
-          <div className="flex">
-            <div className="w-32 text-sm font-medium text-slate-600">Project</div>
-            <div className="text-sm text-slate-900">{meetingData.project}</div>
-          </div>
-          <div className="flex">
-            <div className="w-32 text-sm font-medium text-slate-600">Tag</div>
-            <div className="text-sm text-slate-900">
-              {meetingData.tags.join(", ")}
-            </div>
-          </div>
-          <div className="flex">
-            <div className="w-32 text-sm font-medium text-slate-600">Status</div>
-            <div className="text-sm text-slate-900">{meetingData.status}</div>
-          </div>
-        </div>
-      </Card>
-
       {/* Purpose */}
       <Card className="p-6">
         <h2 className="text-xl font-semibold text-slate-900 mb-4">Purpose</h2>
@@ -77,18 +36,18 @@ export function MeetingOverviewSection() {
         <Card className="p-5">
           <h3 className="text-base font-semibold text-slate-900 mb-2">Prep</h3>
           <p className="text-sm text-slate-600 mb-4">
-            Review materials and prepare for the meeting
+            AI-generated prep is ready
           </p>
-          <Button variant="primary" size="sm" className="w-full">
+          <Button variant="secondary" size="sm" className="w-full">
             View Prep Summary
           </Button>
         </Card>
         <Card className="p-5">
           <h3 className="text-base font-semibold text-slate-900 mb-2">Live</h3>
           <p className="text-sm text-slate-600 mb-4">
-            Join the live meeting session
+            Ready to start meeting?
           </p>
-          <Button variant="primary" size="sm" className="w-full">
+          <Button variant="secondary" size="sm" className="w-full">
             Enter Live
           </Button>
         </Card>
@@ -97,9 +56,9 @@ export function MeetingOverviewSection() {
             Outcomes
           </h3>
           <p className="text-sm text-slate-600 mb-4">
-            View meeting minutes and outcomes
+            Not started yet
           </p>
-          <Button variant="primary" size="sm" className="w-full">
+          <Button variant="secondary" size="sm" className="w-full">
             View Minutes
           </Button>
         </Card>

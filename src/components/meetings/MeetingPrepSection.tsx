@@ -18,23 +18,24 @@ const meetingData = {
 const materials = [
   {
     id: 1,
-    title: "Marketing Plan Q4",
-    description: "Quarterly marketing strategy document",
+    title: "Lorem ipsum",
+    description: "Lorem ipsum dolor sit amet consectetur.",
+    iconColor: "bg-blue-100",
+    iconTextColor: "text-blue-600",
   },
   {
     id: 2,
-    title: "Budget Analysis",
-    description: "Detailed budget breakdown and projections",
+    title: "Lorem ipsum",
+    description: "Lorem ipsum dolor sit amet consectetur.",
+    iconColor: "bg-yellow-100",
+    iconTextColor: "text-yellow-600",
   },
   {
     id: 3,
-    title: "Competitor Research",
-    description: "Analysis of competitor strategies",
-  },
-  {
-    id: 4,
-    title: "Campaign Metrics",
-    description: "Performance data from recent campaigns",
+    title: "Lorem ipsum",
+    description: "Lorem ipsum dolor sit amet consectetur.",
+    iconColor: "bg-green-100",
+    iconTextColor: "text-green-600",
   },
 ];
 
@@ -42,27 +43,26 @@ const agendaItems = [
   {
     id: 1,
     title: "Review wireframes",
-    description: "Discuss and review the latest wireframe designs",
+    description: "Validate latest wireframe revisions",
     duration: "20min",
   },
   {
     id: 2,
     title: "Discuss design",
-    description: "Review design mockups and gather feedback",
+    description: "Finalize UI, colors, layouts, etc.",
     duration: "20min",
   },
   {
     id: 3,
     title: "Outline next steps",
-    description: "Define action items and next milestones",
+    description: "Assign tasks and responsibilities",
     duration: "20min",
   },
 ];
 
 const briefings = [
-  { role: "PM", text: "Prepared agenda and key discussion points" },
-  { role: "Designer", text: "Ready to present new design concepts" },
-  { role: "Developer", text: "Technical feasibility review completed" },
+  { role: "PM", text: "Lorem ipsum dolor sit amet consectetur." },
+  { role: "Designer", text: "Lorem ipsum dolor sit amet consectetur." },
 ];
 
 export function MeetingPrepSection() {
@@ -75,7 +75,7 @@ export function MeetingPrepSection() {
         <h2 className="text-xl font-semibold text-slate-900 mb-4">
           Purpose & Background
         </h2>
-        <p className="text-sm text-slate-600 leading-relaxed">
+        <p className="text-sm text-slate-600 leading-relaxed mb-4">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
           ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -83,6 +83,26 @@ export function MeetingPrepSection() {
           reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
           pariatur.
         </p>
+        <div className="flex gap-3">
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
+              <span className="text-blue-600 text-sm">📄</span>
+            </div>
+            <span className="text-sm text-slate-600">Lorem ipsum</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-8 bg-yellow-100 rounded-lg flex items-center justify-center">
+              <span className="text-yellow-600 text-sm">📄</span>
+            </div>
+            <span className="text-sm text-slate-600">Lorem ipsum</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
+              <span className="text-green-600 text-sm">📄</span>
+            </div>
+            <span className="text-sm text-slate-600">Lorem ipsum</span>
+          </div>
+        </div>
       </Card>
 
       {/* Material Summary */}
@@ -90,14 +110,14 @@ export function MeetingPrepSection() {
         <h2 className="text-xl font-semibold text-slate-900 mb-4">
           Material Summary
         </h2>
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid grid-cols-3 gap-4">
           {materials.map((material) => (
             <div
               key={material.id}
               className="p-4 bg-slate-50 rounded-lg border border-slate-200"
             >
-              <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mb-3">
-                <span className="text-blue-600 text-lg">📄</span>
+              <div className={`w-10 h-10 ${material.iconColor} rounded-lg flex items-center justify-center mb-3`}>
+                <span className={`${material.iconTextColor} text-lg`}>📄</span>
               </div>
               <h3 className="font-semibold text-slate-900 text-sm mb-1">
                 {material.title}
@@ -117,7 +137,7 @@ export function MeetingPrepSection() {
           {agendaItems.map((item) => (
             <div
               key={item.id}
-              className="p-4 bg-slate-50 rounded-lg border border-slate-200"
+              className="p-4 bg-white rounded-lg border border-slate-200"
             >
               <h3 className="font-semibold text-slate-900 text-sm mb-2">
                 {item.title}
