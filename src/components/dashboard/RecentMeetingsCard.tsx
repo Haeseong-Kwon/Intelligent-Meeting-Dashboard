@@ -11,43 +11,57 @@ export function RecentMeetingsCard() {
     },
     {
       id: 2,
-      title: "Team Sync",
-      date: "Nov 28",
-      project: "Project B",
+      title: "Business Review",
+      date: "Nov 30",
+      project: "Project A",
     },
     {
       id: 3,
-      title: "Sprint Planning",
-      date: "Nov 27",
+      title: "Business Review",
+      date: "Dec 1",
       project: "Project A",
     },
   ];
 
   return (
     <Card className="p-6">
-      <h2 className="text-base font-semibold text-slate-900 mb-6">Recent Meetings</h2>
+      <h2 className="mb-4 text-sm font-semibold text-slate-900">
+        Recent Meetings
+      </h2>
       <div className="grid grid-cols-3 gap-4">
         {meetings.map((meeting) => (
           <div
             key={meeting.id}
-            className="p-4 bg-slate-50 rounded-lg flex flex-col gap-3"
+            className="flex flex-col gap-3 rounded-2xl border border-slate-100 bg-white px-5 py-4"
           >
             <div>
-              <div className="font-semibold text-slate-900 mb-1">
+              <div className="mb-1 text-sm font-semibold text-slate-900">
                 {meeting.title}
               </div>
-              <div className="text-sm text-slate-500">
+              <div className="text-xs text-slate-400">
                 {meeting.date} | {meeting.project}
               </div>
             </div>
             <div className="flex flex-col gap-2">
-              <Button variant="ghost" size="sm" className="text-xs justify-start">
+              <Button
+                variant="ghost"
+                size="sm"
+                className="justify-center rounded-full bg-slate-100 text-xs hover:bg-slate-200"
+              >
                 View Minutes
               </Button>
-              <Button variant="ghost" size="sm" className="text-xs justify-start">
+              <Button
+                variant="ghost"
+                size="sm"
+                className="justify-center rounded-full bg-slate-100 text-xs hover:bg-slate-200"
+              >
                 View Patterns
               </Button>
-              <Button variant="ghost" size="sm" className="text-xs justify-start">
+              <Button
+                variant="ghost"
+                size="sm"
+                className="justify-center rounded-full bg-slate-100 text-xs hover:bg-slate-200"
+              >
                 Prepare Next Meetings
               </Button>
             </div>

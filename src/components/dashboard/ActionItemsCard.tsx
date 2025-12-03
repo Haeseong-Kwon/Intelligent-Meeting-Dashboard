@@ -51,20 +51,31 @@ export function ActionItemsCard() {
 
   return (
     <Card className="p-6">
-      <h2 className="text-base font-semibold text-slate-900 mb-6">My Action Items</h2>
-      <div className="flex flex-col gap-4">
+      <h2 className="mb-4 text-sm font-semibold text-slate-900">
+        My Action Items
+      </h2>
+      <div className="flex flex-col gap-3">
         {actionItems.map((item) => (
           <div
             key={item.id}
-            className="flex items-center justify-between p-4 bg-slate-50 rounded-lg"
+            className="flex items-center justify-between rounded-xl border border-slate-100 bg-white px-4 py-3"
           >
-            <div className="flex-1">
-              <div className="font-semibold text-slate-900 mb-1">
+            <div className="flex flex-col">
+              <div className="text-sm font-semibold text-slate-900">
                 {item.title}
               </div>
-              <div className="text-sm text-slate-500">{item.date}</div>
+              <div className="mt-0.5 text-xs text-slate-400">{item.date}</div>
             </div>
-            <Badge variant={getStatusVariant(item.status) as "status-completed" | "status-overdue" | "status-in-progress" | "status-scheduled"}>
+            <Badge
+              variant={
+                getStatusVariant(item.status) as
+                  | "status-completed"
+                  | "status-overdue"
+                  | "status-in-progress"
+                  | "status-scheduled"
+              }
+              className="px-3 py-1 text-[11px]"
+            >
               {getStatusLabel(item.status)}
             </Badge>
           </div>

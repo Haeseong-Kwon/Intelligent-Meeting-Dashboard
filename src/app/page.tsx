@@ -5,10 +5,10 @@ import { RecentMeetingsCard } from "@/components/dashboard/RecentMeetingsCard";
 
 export default function DashboardPage() {
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-10">
       <PageHeader title="Dashboard" />
-      
-      {/* Today's Meetings + Action Items */}
+
+      {/* Today's Meetings + My Action Items */}
       <div className="grid grid-cols-2 gap-6">
         <TodayMeetingsCard />
         <ActionItemsCard />
