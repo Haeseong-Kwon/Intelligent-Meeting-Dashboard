@@ -47,18 +47,9 @@ export function MeetingHeader({
       <div className="flex flex-wrap items-center gap-4 mb-4">
         <div className="flex items-center gap-2">
           <span className="text-sm text-slate-600">Attendees:</span>
-          <div className="flex items-center gap-2">
-            {attendees.map((attendee, idx) => (
-              <div key={idx} className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center">
-                  <span className="text-xs text-slate-600">
-                    {attendee.charAt(0)}
-                  </span>
-                </div>
-                <span className="text-sm text-slate-700">{attendee}</span>
-              </div>
-            ))}
-          </div>
+          <span className="text-sm text-slate-700">
+            {attendees.join(", ")}
+          </span>
         </div>
       </div>
       <div className="flex flex-wrap items-center gap-3">

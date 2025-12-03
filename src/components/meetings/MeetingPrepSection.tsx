@@ -114,7 +114,7 @@ export function MeetingPrepSection() {
           {materials.map((material) => (
             <div
               key={material.id}
-              className="p-4 bg-slate-50 rounded-lg border border-slate-200"
+              className="p-4 bg-slate-50 rounded-lg border border-slate-100"
             >
               <div className={`w-10 h-10 ${material.iconColor} rounded-lg flex items-center justify-center mb-3`}>
                 <span className={`${material.iconTextColor} text-lg`}>📄</span>
@@ -137,7 +137,7 @@ export function MeetingPrepSection() {
           {agendaItems.map((item) => (
             <div
               key={item.id}
-              className="p-4 bg-white rounded-lg border border-slate-200"
+              className="p-4 bg-white rounded-lg border border-slate-100"
             >
               <h3 className="font-semibold text-slate-900 text-sm mb-2">
                 {item.title}
