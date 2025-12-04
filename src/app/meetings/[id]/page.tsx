@@ -57,7 +57,14 @@ export default function MeetingDetailPage() {
           />
         );
       case "prep":
-        return <MeetingPrepSection />;
+        return (
+          <MeetingPrepSection
+            isEditMode={isEditMode}
+            meetingData={meetingData}
+            onMeetingDataChange={setMeetingData}
+            onEditModeChange={setIsEditMode}
+          />
+        );
       case "live":
         return (
           <Card className="p-12 text-center">
@@ -106,7 +113,7 @@ export default function MeetingDetailPage() {
               <Button variant="primary" size="md" onClick={() => router.push("/meetings/new")}>
                 + New Meeting
               </Button>
-              {activeTab === "overview" && (
+              {(activeTab === "overview" || activeTab === "prep") && (
                 <Button variant="secondary" size="md" onClick={() => setIsEditMode(true)}>
                   편집
                 </Button>
